@@ -1,0 +1,194 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "com.project.travel.model.Activity#getCapacity()",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "com.project.travel.model.Activity",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_309310695 { 
+   	label=project
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_458742671 { 
+   	label=travel
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   subgraph cluster_1112021222 { 
+   	label=Activity
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Activity23207337XXXgetCapacity0[
+	label="+ getCapacity()"
+	style=filled
+	fillcolor=white
+	tooltip="Activity
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1606490092 { 
+   	label=TravelPackageService
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   TravelPackageService70215069XXXfindByTravelId2374300[
+	label="+ findByTravelId()"
+	style=filled
+	fillcolor=white
+	tooltip="TravelPackageService
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1620003077 { 
+   	label=ActivityService
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   ActivityService70215069XXXfindAvailableActivities0[
+	label="+ findAvailableActivities()"
+	style=filled
+	fillcolor=white
+	tooltip="ActivityService
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_1879492870 { 
+   	label=PassengerService
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   PassengerService70215069XXXactivitySignUp99390616[
+	label="+ activitySignUp()"
+	style=filled
+	fillcolor=white
+	tooltip="PassengerService
+
+null"
+	fontcolor=darkgreen
+];
+} 
+
+subgraph cluster_305328216 { 
+   	label=TravelPackageController
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   TravelPackageController2060728018XXXfindByTravelId2374300[
+	label="+ findByTravelId()"
+	style=filled
+	fillcolor=white
+	tooltip="TravelPackageController
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+} 
+
+'edges    
+ActivityService70215069XXXfindAvailableActivities0 -> Activity23207337XXXgetCapacity0;
+PassengerService70215069XXXactivitySignUp99390616 -> Activity23207337XXXgetCapacity0;
+TravelPackageController2060728018XXXfindByTravelId2374300 -> TravelPackageService70215069XXXfindByTravelId2374300;
+TravelPackageService70215069XXXfindByTravelId2374300 -> Activity23207337XXXgetCapacity0;
+    
+}
+@enduml
